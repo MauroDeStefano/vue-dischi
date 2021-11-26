@@ -1,28 +1,32 @@
 <template>
   <main>
-    <div class="container p-5">
+    <div v-if="toLoad" class="container p-5">
       <Albums 
       v-for="(album, index) in albums"
       :key="index"
       :album="album"
       />
     </div>
+    <div v-else><Loader :titleLoader="'Stà Arrivando...'"/></div>
   </main>
 </template>
 
 <script>
 import axios from 'axios';
 import Albums from './Albums.vue';
+import Loader from './Loader.vue';
 
 export default {
   name: 'Main',
   components:{
     Albums,
+    Loader
   },
   data(){
     return{
       albums: [],
-      newUrl: "https://flynn.boolean.careers/exercises/api/array/music",
+      newUrl: "https://flynn.boolean.career/exercises/api/array/music",
+      toLoad: false
     }
   },
   methods:{
@@ -30,6 +34,7 @@ export default {
       axios.get(this.newUrl)
       .then(r => {
         this.albums = r.data.response;
+        this.toLoad = true;
       })
       .catch( e => {
         console.log(e);
