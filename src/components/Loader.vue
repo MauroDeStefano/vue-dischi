@@ -18,6 +18,11 @@ export default {
 
 @import '../assets/style/vars.scss';
 
+h4{
+  margin: 50px;
+  margin-left: 80px;
+}
+
 div{
   padding: 20px;
   color: white;

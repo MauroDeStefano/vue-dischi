@@ -25,7 +25,7 @@ export default {
   data(){
     return{
       albums: [],
-      newUrl: "https://flynn.boolean.career/exercises/api/array/music",
+      newUrl: "https://flynn.boolean.careers/exercises/api/array/music",
       toLoad: false
     }
   },
@@ -55,7 +55,7 @@ export default {
 
 main{
   background-color: $main-bg;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 </style>

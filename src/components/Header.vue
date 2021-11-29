@@ -1,15 +1,31 @@
 <template>
-  <div class="d-flex align-content-center align-middle">
+<div class="d-flex justify-content-between align-items-center">
     <img  src="https://cdn.discordapp.com/attachments/887685956050780201/913759060090843156/spotify-logo.png" alt="Logo">
-  </div>
+    <SelectType 
+    @selectionType="getType" />
+</div>
 </template>
 
 <script>
+import SelectType from './SelectType.vue'
 export default {
   name: 'Header',
-  props:{
-    
+  components:{
+    SelectType,
+  },
+  data(){
+    return{
+      selection : "",
+    }
+  },
+  methods:{
+    getType(text){
+      this.selection = text;
+      console.log("questo è getType dentro all'header", this.text);
+      
+    }
   }
+
 }
 </script>
 
@@ -21,7 +37,7 @@ export default {
 
 div{
   height: 80px;
-  
+  padding:  10px;
   width: 100%;
   background-color: $primary-bg;
 
