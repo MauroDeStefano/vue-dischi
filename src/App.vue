@@ -1,6 +1,6 @@
 <template>
-  <Header />
-  <Main />
+  <Header @selectedType="selectedHeader"/>
+  <Main :stringToMain="headerToMain"/>
   <Footer />
 
 </template>
@@ -18,7 +18,19 @@ export default {
     Header,
     Main,
     Footer
-  }
+  },
+  
+  data(){
+    return{
+    headerToMain: "",
+    }
+  },
+  methods:{
+    selectedHeader(text){
+      this.headerToMain = text;
+      console.log("questa è l'app", this.headerToMain);
+    }
+  },
 }
 </script>
 

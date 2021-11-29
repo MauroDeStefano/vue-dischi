@@ -5,6 +5,7 @@
       v-for="(album, index) in albums"
       :key="index"
       :album="album"
+      
       />
     </div>
     <div v-else><Loader :titleLoader="'Stà Arrivando...'"/></div>
@@ -22,9 +23,13 @@ export default {
     Albums,
     Loader
   },
+  props:{
+    stringToMain: String,
+  },
   data(){
     return{
-      albums: [],
+    
+    albums: [],
       newUrl: "https://flynn.boolean.careers/exercises/api/array/music",
       toLoad: false
     }
