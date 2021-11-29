@@ -3,6 +3,7 @@
       <option selected>metal</option>
       <option>jazz</option>
       <option>pop</option>
+      <option>All</option>
     </select>  
 </template>
 

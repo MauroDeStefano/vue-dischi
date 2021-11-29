@@ -22,7 +22,7 @@ export default {
    getType(text){
       this.selection = text;
       console.log("questo è getType dentro all'header", this.selection);
-      return this.selection;
+      return this.$emit("selectedType",this.selection);
     }
   },
   computed:{
