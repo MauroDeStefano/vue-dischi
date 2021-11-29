@@ -1,6 +1,6 @@
 <template>
-    <select  class="selector" v-model="typeSelection" @change="$emit('selectionType', typeSelection)">
-      <option>metal</option>
+    <select  class="selector" v-model="typeSelection" @change="getSelection">
+      <option selected>metal</option>
       <option>jazz</option>
       <option>pop</option>
     </select>  
@@ -16,8 +16,11 @@ export default{
     }
   },
   methods: {
+    
+  },
+  computed:{
     getSelection(){
-      this.$emit("selectionType", this.typeSelection);
+     return this.$emit("selectionType", this.typeSelection);
     }
   }
 };
