@@ -1,6 +1,6 @@
 <template>
     <select  class="selector" v-model="typeSelection" @change="getSelection">
-      <option selected>metal</option>
+      <option>metal</option>
       <option>jazz</option>
       <option>pop</option>
       <option>All</option>
