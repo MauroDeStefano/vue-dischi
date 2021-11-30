@@ -17,13 +17,11 @@ export default{
     }
   },
   methods: {
-    
-  },
-  computed:{
     getSelection(){
      return this.$emit("selectionType", this.typeSelection);
     }
   }
+
 };
 
 </script>
